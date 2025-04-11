@@ -1,0 +1,4 @@
+ID,firstName,lastName,jobTitle,companyId_ID,salary
+1,spoo,gade,Software Engineer,101,75000.00
+2,tharu,naini,Project Manager,102,85000.00
+3,laksh,rach,Data Analyst,102,70000.00

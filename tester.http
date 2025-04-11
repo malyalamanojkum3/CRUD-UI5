@@ -1,0 +1,70 @@
+### getting the data
+
+GET http://localhost:4004/odata/v4/my/employee
+
+### creating the data
+
+POST http://localhost:4004/odata/v4/my/employee
+Content-Type: application/json
+
+
+{
+  "ID": 2,
+      "firstName": "laxith",
+      "lastName": "racha",
+      "jobTitle": "Softwar engineer",
+      "companyId_ID": 103,
+      "salary": 56000
+}
+
+
+### getting the company data
+GET http://localhost:4004/odata/v4/my/company
+
+### posting new data in the company data
+
+POST http://localhost:4004/odata/v4/my/company
+Content-Type: application/json
+
+
+{
+  "ID": 105,
+      "companyName": "Design Hub",
+      "address" : "Church Street"
+}
+
+### reading the particular ID
+
+GET http://localhost:4004/odata/v4/my/employee(ID=3)
+
+### deleting the data of particular id
+
+DELETE http://localhost:4004/odata/v4/my/employee(ID=2)
+
+
+###getting the data after deleting for particular employee ID
+
+GET http://localhost:4004/odata/v4/my/employee
+
+### deleting the data of particular company id
+
+DELETE http://localhost:4004/odata/v4/my/company(ID=103)
+
+
+### updating the emplyee information
+
+PUT http://localhost:4004/odata/v4/my/employee(ID=3)
+Content-Type: application/json
+
+
+{
+  "firstName": "tharun",
+      "lastName": "nain",
+      "jobTitle": "Hardware",
+      "companyId_ID": 103,
+      "salary": "70000.00"
+}
+
+###getting the data after updating the particular employee ID information
+
+GET http://localhost:4004/odata/v4/my/employee
