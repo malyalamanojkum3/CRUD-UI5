@@ -68,17 +68,17 @@ this.on('DELETE', 'employee', async (req) => {
      });
 
      // Handler for DELETE operation on company by ID
-    this.on('DELETE', 'company', async (req) => {
-            const { ID } = req.data;
-            if (!ID) {
-                return req.error(400, 'Error: Missing company ID.');
-            } else {
-                const deleted = await DELETE.from(company).where({ ID });
-                        return { message: 'Company deleted successfully.' };
-            }
-        });
+ this.on('DELETE', 'company', async (req) => {
+     const { ID } = req.data;
+     if (!ID) {
+     return req.error(400, 'Error: Missing company ID.');
+     } else {
+     const deleted = await DELETE.from(company).where({ ID });
+     return { message: 'Company deleted successfully.' };
+     }
+     });
 
-    //updating the emplyee information
+    //updating the employee information
     this.on('UPDATE', 'employee', async (req) => {
          const { ID, firstName, lastName, jobTitle, companyId_ID, salary } = req.data;
          if (!ID) {

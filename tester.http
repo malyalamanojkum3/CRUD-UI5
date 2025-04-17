@@ -9,12 +9,12 @@ Content-Type: application/json
 
 
 {
-  "ID": 2,
-      "firstName": "laxith",
-      "lastName": "racha",
-      "jobTitle": "Softwar engineer",
-      "companyId_ID": 103,
-      "salary": 56000
+  "ID": 3,
+      "firstName": "tharu",
+      "lastName": "naini",
+      "jobTitle": "Software engineer",
+      "companyId_ID": 102,
+      "salary": 70000
 }
 
 
@@ -39,7 +39,7 @@ GET http://localhost:4004/odata/v4/my/employee(ID=3)
 
 ### deleting the data of particular id
 
-DELETE http://localhost:4004/odata/v4/my/employee(ID=2)
+DELETE http://localhost:4004/odata/v4/my/employee(ID=3)
 
 
 ###getting the data after deleting for particular employee ID
@@ -58,13 +58,14 @@ Content-Type: application/json
 
 
 {
-  "firstName": "tharun",
-      "lastName": "nain",
-      "jobTitle": "Hardware",
-      "companyId_ID": 103,
+  "firstName": "tharuni",
+      "lastName": "naini",
+      "jobTitle": "Hardware Engineer",
+      "companyId_ID": 102,
       "salary": "70000.00"
 }
 
 ###getting the data after updating the particular employee ID information
 
 GET http://localhost:4004/odata/v4/my/employee
+
