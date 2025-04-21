@@ -62,16 +62,19 @@
           "bundleName": "app.i18n.i18n"
         }
       },
-      "": {
-        "dataSource": "mainService",
-        "preload": true,
-        "settings": {
-          "operationMode": "Server",
-          "autoExpandSelect": true,
-          "earlyRequests": true
-        }
-      }
-    },
+      "mainModel": {
+                "type": "sap.ui.model.odata.v4.ODataModel",
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {
+                    "synchronizationMode": "None",
+                    "operationMode": "Server",
+                    "autoExpandSelect": true,
+                    "earlyRequests": true,
+                    "groupId": "$auto"
+                }
+            }
+        },
     "resources": {
       "css": [
         {
@@ -98,13 +101,26 @@
           "target": [
             "TargetView1"
           ]
-        }
+        },
+        
+{
+   "pattern": "",
+   "name": "home",
+   "target": "home"
+   }
       ],
       "targets": {
         "TargetView1": {
           "id": "View1",
           "name": "View1"
-        }
+        },
+
+         "home": {
+         "viewName": "Home",
+         "viewLevel": 1,
+         "viewId": "home",
+         "viewType": "XML"
+         }      
       }
     },
     "rootView": {

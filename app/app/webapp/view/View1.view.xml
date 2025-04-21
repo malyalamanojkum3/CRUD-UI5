@@ -1,6 +1,69 @@
-<mvc:View controllerName="app.controller.View1"
+    <mvc:View controllerName="app.controller.View1"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form">
+    <Page id="page" title="Employee Management">
+        <content>
+            <Button id="createEmployeeButton" text="Create Employee" press="onCreateEmployee"/>
+            <Dialog id="createEmployeeDialog" title="Create Employee">
+                <content>
+                    <VBox id="_IDGenVBox">
+                        <Label id="_IDGenLabel1" text="ID" />
+                        <Input id="employeeID" />
+                        <Label id="_IDGenLabel2" text="First Name" />
+                        <Input id="employeeFirstName" />
+                        <Label id="_IDGenLabel3" text="Last Name" />
+                        <Input id="employeeLastName" />
+                        <Label id="_IDGenLabel4" text="Job Title" />
+                        <Input id="employeeJobTitle" />
+                        <Label id="_IDGenLabel5" text="Company ID" />
+                        <Input id="employeeCompanyID" />
+                        <Label id="_IDGenLabel6" text="Salary" />
+                        <Input id="employeeSalary" />
+                    </VBox>
+                </content>
+                <beginButton>
+                    <Button id="_IDGenButton" text="Create" press="onConfirmCreateEmployee" />
+                </beginButton>
+                <endButton>
+                    <Button id="_IDGenButton1" text="Cancel" press="onCancelCreateEmployee" />
+                </endButton>
+            </Dialog>
+            <Table id="employeeTable" items="{mainModel>/employee}">
+                <columns>
+                    <Column id="_IDGenColumn">
+                        <Text id="_IDGenText" text="ID"/>
+                    </Column>
+                    <Column id="_IDGenColumn1">
+                        <Text id="_IDGenText1" text="First Name"/>
+                    </Column>
+                    <Column id="_IDGenColumn2">
+                        <Text id="_IDGenText2" text="Last Name"/>
+                    </Column>
+                    <Column id="_IDGenColumn3">
+                        <Text id="_IDGenText3" text="Job Title"/>
+                    </Column>
+                    <Column id="_IDGenColumn4">
+                        <Text id="_IDGenText4" text="Company ID"/>
+                    </Column>
+                    <Column id="_IDGenColumn5">
+                        <Text id="_IDGenText5" text="Salary"/>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem id="_IDGenColumnListItem">
+                        <cells>
+                            <Text id="_IDGenText6" text="{mainModel>ID}"/>
+                            <Text id="_IDGenText7" text="{mainModel>firstName}"/>
+                            <Text id="_IDGenText8" text="{mainModel>lastName}"/>
+                            <Text id="_IDGenText9" text="{mainModel>jobTitle}"/>
+                            <Text id="_IDGenText10" text="{mainModel>companyId_ID}"/>
+                            <Text id="_IDGenText11" text="{mainModel>salary}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
     </Page>
 </mvc:View>
