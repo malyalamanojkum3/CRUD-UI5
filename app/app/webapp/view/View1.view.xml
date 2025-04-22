@@ -30,6 +30,32 @@
                     <Button id="_IDGenButton1" text="Cancel" press="onCancelCreateEmployee" />
                 </endButton>
             </Dialog>
+
+    <Dialog id="updateEmployeeDialog" title="Update Employee">
+        <content>
+            <VBox id="_IDGenVBox2">
+                <Label id="_Label1" text="ID" />
+                <Input id="u_employeeID" value="{mainModel>ID}" />
+                <Label id="Label2" text="First Name" />
+                <Input id="u_employeeFirstName" value="{mainModel>firstName}" />
+                <Label id="Label3" text="Last Name" />
+                <Input id="u_employeeLastName" value="{mainModel>lastName}" />
+                <Label id="Label4" text="Job Title" />
+                <Input id="u_employeeJobTitle" value="{mainModel>jobTitle}" />
+                <Label id="Label5" text="Company ID" />
+                <Input id="u_employeeCompanyID" value="{mainModel>companyId_ID}" />
+                <Label id="Label6" text="Salary" />
+                <Input id="u_employeeSalary" value="{mainModel>salary}" />
+            </VBox>
+        </content>
+        <beginButton>
+            <Button id="_IDGenButton2" text="Update" press="onConfirmUpdateEmployee" />
+        </beginButton>
+        <endButton>
+            <Button id="_IDGenButton3" text="Cancel" press="onCancelUpdateEmployee" />
+        </endButton>
+    </Dialog>
+
             <Table id="employeeTable" items="{mainModel>/employee}">
                 <columns>
                     <Column id="_IDGenColumn">
