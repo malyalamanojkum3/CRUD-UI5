@@ -50,6 +50,9 @@
                     <Column id="_IDGenColumn5">
                         <Text id="_IDGenText5" text="Salary"/>
                     </Column>
+                    <Column id="_IDGenColumn6">
+                        <Text id="_IDGenAction" text="Actions"/>
+                    </Column>
                 </columns>
                 <items>
                     <ColumnListItem id="_IDGenColumnListItem">
@@ -60,6 +63,10 @@
                             <Text id="_IDGenText9" text="{mainModel>jobTitle}"/>
                             <Text id="_IDGenText10" text="{mainModel>companyId_ID}"/>
                             <Text id="_IDGenText11" text="{mainModel>salary}"/>
+                            <HBox id="_IDGenAction2">
+                                <Button id="updateButton" text="Update" press="onUpdatePress"/>
+                                <Button id="deleteButton" text="Delete" press="onDeletePress"/>
+                            </HBox>
                         </cells>
                     </ColumnListItem>
                 </items>

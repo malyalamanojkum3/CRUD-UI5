@@ -42,7 +42,7 @@ $.ajax({
         MessageToast.show("Employee created successfully!");
         this.byId("createEmployeeDialog").close();
         // Optionally, refresh the model to update the table
-        this.getView().getModel().refresh();
+        this.getView().getModel("mainModel").refresh();
     },
     error: (error) => {
         MessageToast.show("Error creating employee: " + error.responseText);
@@ -52,6 +52,24 @@ $.ajax({
         onCancelCreateEmployee() {
             // Close the dialog without saving
             this.byId("createEmployeeDialog").close();
-        }
+        },
+        //delete
+        onDeletePress(oEvent) {
+            var oItem = oEvent.getSource().getParent();
+            var oContext = oItem.getBindingContext("mainModel");
+            var sID = oContext.getProperty("ID");
+            $.ajax({
+                url: "/odata/v4/my/employee(" + sID + ")",
+                method: "DELETE",
+                success: (data) => {
+                    MessageToast.show("Employee deleted successfully!");
+                    this.getView().getModel("mainModel").refresh();
+                },
+                error: (error) => {
+                    MessageToast.show("Error deleting employee: " + error.responseText);
+                }
+            });
+            
+        },
     });
 });
